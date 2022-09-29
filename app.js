@@ -36,7 +36,7 @@ app.get('/search', (req, res) => {
   const restaurants = restaurantList.results.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword) || restaurant.category.includes(keyword)
   })
-  res.render('index', { restaurants: restaurants, keyword: req.query.keyword })
+  res.render('index', { restaurants: restaurants, keyword })
 })
 
 // start and listen on the Express server
