@@ -28,7 +28,7 @@ app.get('/search', (req, res) => {
 
   //no result reutrn
   if (!req.query.keyword) {
-    return res.redirect("/")
+    return res.redirect('/')
   }
 
   //name and category search
@@ -36,7 +36,7 @@ app.get('/search', (req, res) => {
   const restaurants = restaurantList.results.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword) || restaurant.category.includes(keyword)
   })
-  res.render('index', { restaurants: restaurants, keyword })
+  res.render('index', { restaurants, keyword })
 })
 
 // start and listen on the Express server
